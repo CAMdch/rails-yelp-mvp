@@ -1,0 +1,22 @@
+<div class="container my-3" style =" width: 600px;">
+  <h1>Restaurants</h1>
+
+  <ul class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant.id), class: "text-decoration-none" do%>
+      <li class="list-group-item mb-2">
+        <strong><%= restaurant.name %></strong>
+        <div class="description">
+          <%= restaurant.address %> -- category <%= restaurant.category %>
+        </div>
+        <div class="contact">
+          contact : <%= restaurant.phone_number %>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
+
+  <%= link_to "Add restaurant", new_restaurant_path, class: "btn btn-primary"%>
+
+</div>
